@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutBtn.Content" xml:space="preserve">
+    <value>Об игре</value>
+  </data>
+  <data name="DateHeader.Text" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="ImageResizer" xml:space="preserve">
+    <value>https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?url={0}&amp;container=focus&amp;resize_w=400&amp;refresh=31536000</value>
+  </data>
+  <data name="IMDB" xml:space="preserve">
+    <value>No</value>
+    <comment>what data using for english or russian players</comment>
+  </data>
+  <data name="ImgPath" xml:space="preserve">
+    <value>https://st.kp.yandex.net/images/kadr{0}.jpg</value>
+  </data>
+  <data name="MsgCanceling" xml:space="preserve">
+    <value>Вы уверены, что хотите выйти из игры?</value>
+  </data>
+  <data name="MsgCancelingNo" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="MsgCancelingYes" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="MsgFinished" xml:space="preserve">
+    <value>Игра окончена! У Вас {0} правильных ответов и {1} очков.</value>
+  </data>
+  <data name="MsgFinishedExit" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="MsgFinishedRetry" xml:space="preserve">
+    <value>Заново</value>
+  </data>
+  <data name="MsgNoInternet" xml:space="preserve">
+    <value>Соединение с интернетом разорвано.Проверьте и попробуйте еще раз.</value>
+  </data>
+  <data name="MsgNoInternetOk" xml:space="preserve">
+    <value>Ок</value>
+  </data>
+  <data name="MsgPaused" xml:space="preserve">
+    <value>Игра была остановлена. Продолжить?</value>
+  </data>
+  <data name="MsgPausedNo" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="MsgPausedYes" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="NewGameBtn.Content" xml:space="preserve">
+    <value>Новая игра</value>
+  </data>
+  <data name="OptionsBtn.Content" xml:space="preserve">
+    <value>Опции</value>
+  </data>
+  <data name="ResultDelBtn.Label" xml:space="preserve">
+    <value>Удалить все</value>
+  </data>
+  <data name="ResultsBtn.Content" xml:space="preserve">
+    <value>Результаты</value>
+  </data>
+  <data name="ResultsTitle.Text" xml:space="preserve">
+    <value>Результаты (ТОП25)</value>
+  </data>
+  <data name="ScoreHeader.Text" xml:space="preserve">
+    <value>Очки</value>
+  </data>
+  <data name="AboutGame.Text" xml:space="preserve">
+    <value>Угадайте фильм. Вам дается 1 кадр, 4 возможных варианта ответа и 2 режима игры: 3 жизни или 3 минуты. В первом режиме вы можете совершить только 2 ошибки (третья  приведет к проигрышу) и ограничены 11 секундами на ответ. Во втором режиме вы можете ошибаться, но на всю игру отводится 3 минуты.  Сложность возрастает от раунда к раунду от самых легких и известных фильмов до очень трудных. За правильные ответы вы получаете очки, количество которых зависит от скорости ответа и сложности вопроса. Попытайтесь набрать как можно больше! В базе игры более 14 тысяч фильмов и 300 тысяч кадров, что дает огромное количество вариантов игры.  Проверьте, как хорошо вы разбираетесь в кино! Удачи!</value>
+  </data>
+  <data name="AboutTitle.Text" xml:space="preserve">
+    <value>Об игре</value>
+  </data>
+  <data name="MsgDelScores" xml:space="preserve">
+    <value>Вы действительно хотите удалить все достижения?</value>
+  </data>
+  <data name="MsgDelScoresNo" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="MsgDelScoresYes" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="ErrorDb" xml:space="preserve">
+    <value>Ошибка базы данных!</value>
+  </data>
+  <data name="ErrorDbUpdate" xml:space="preserve">
+    <value>Ошибка при обновлении базы данных!</value>
+  </data>
+  <data name="LivesTypeBtn.Content" xml:space="preserve">
+    <value>жизни</value>
+  </data>
+  <data name="LiveTypeCombo.Text" xml:space="preserve">
+    <value>до 3 жизней</value>
+  </data>
+  <data name="Or.Text" xml:space="preserve">
+    <value>ИЛИ</value>
+  </data>
+  <data name="TimeTypeBtn.Content" xml:space="preserve">
+    <value>минуты</value>
+  </data>
+  <data name="TimeTypeCombo.Text" xml:space="preserve">
+    <value>до 3 минут</value>
+  </data>
+  <data name="TypeTitle.Text" xml:space="preserve">
+    <value>Тип игры</value>
+  </data>
+  <data name="HockeyAppID" xml:space="preserve">
+    <value>b1ec7c42eb504d5eb4d3666c1a0660fa</value>
+  </data>
+  <data name="MsgRateApp" xml:space="preserve">
+    <value>Надеюсь вам понравилась эта игра.  Хотели бы оценить ее?</value>
+  </data>
+  <data name="MsgRateAppNo" xml:space="preserve">
+    <value>Не сейчас</value>
+  </data>
+  <data name="MsgRateAppYes" xml:space="preserve">
+    <value>Оценить</value>
+  </data>
+  <data name="StatTxt" xml:space="preserve">
+    <value>Сыграно игр: {0}. Угадано фильмов: {1}. Не угадано: {2}</value>
+  </data>
+</root>

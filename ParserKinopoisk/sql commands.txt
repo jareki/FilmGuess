@@ -1,0 +1,26 @@
+//удалить фильмы без кадров
+delete from FilmData where filmID in (select a.filmID from FilmData a where a.filmID not in (select FilmShot.filmID from FilmShot where FilmShot.filmID=a.filmID))
+
+//сделать выборку всех filmID без кадров
+select a.filmID from FilmData a where a.filmID not in (select FilmShot.filmID from FilmShot where FilmShot.filmID=a.filmID)
+
+//удалить все видео и сериалы из 2-ух таблиц
+delete from FilmShot where filmid in (select FilmData.filmID from FilmData where (FilmData.nameRU like '%(видео)%' ) or (FilmData.nameRU like '%(сериал)%'))
+delete from FilmData where filmID in (select FilmData.filmID from FilmData where (FilmData.nameRU like '%(видео)%' ) or (FilmData.nameRU like '%(сериал)%'))
+
+
+//--------------------------------------------------------------------------------------------------------------------------
+//Для слияния таблиц сделать:
+//1. Экспортировать таблицы из новой бд в csv-файл
+//2. Импортировать таблицы в основную бд. в конце имени добавить 2
+//3. в основных таблицах поля FilmData.filmID и FilmShot.image сделать UNIQUE
+//4. выполнить следующие команды:
+//объединить таблицу FilmData с новыми данными предварительно вручную экспортированными и импортированными через csv-файл
+insert or ignore into FilmData (filmID,nameRU,nameEN,year,rating,ratingIMDb,ratingVoteCount,ratingIMDbVoteCount) select filmID,nameRU,nameEN,year,rating,ratingIMDb,ratingVoteCount,ratingIMDbVoteCount from filmdata2
+
+//объединить таблицу FilmShot с новыми данными предварительно вручную экспортированными и импортированными через csv-файл
+insert or ignore into FilmShot (filmid,image) select filmid,image from  FilmShot2
+
+//5. Убрать атрибут UNIQUE для экономии места. Удалить таблицы с номером 2 и сделать CompactDatabase.
+
+//ВМЕСТО ПУНКТОВ 3 И 5 ДЛЯ FilmData МОЖНО ПРОСТО УДАЛИТЬ ЗАПИСИ ЗА ПОСЛЕДНИЙ ГОД В ОСНОВНОЙ ТАБЛИЦЕ FilmData!!!!

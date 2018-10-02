@@ -1,0 +1,65 @@
+﻿<Page
+    x:Class="FilmGuess.ResultsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FilmGuess"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:FilmGuess.Models"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="ScoreDataTemplate" x:DataType="data:Scores">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <TextBlock Text="{x:Bind Score}" FontSize="18" Width="70" />
+                <TextBlock Text="{x:Bind Date}" FontSize="18 "/>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="Assets/bg.jpg" AlignmentX="Center" AlignmentY="Top" />
+        </Grid.Background>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <RelativePanel>
+            <RelativePanel.Background>
+                <ImageBrush ImageSource="Assets/title-bg.png" />
+            </RelativePanel.Background>
+            <Button Name="BackBtn" FontFamily="Segoe MDL2 Assets" Content="&#xE0C4;" Style="{StaticResource ButtonStyle}"
+                    Height="50" FontSize="20" Click="BackBtn_Click"/>
+            <TextBlock x:Uid="ResultsTitle" RelativePanel.RightOf="BackBtn" RelativePanel.AlignVerticalCenterWithPanel="True"
+                       Margin="10,5" FontSize="24"/>
+        </RelativePanel>
+
+        <!--<StackPanel Grid.Row="1" Background="#e0e3ea"  Orientation="Horizontal" > -->
+        <ComboBox Name="GameTypeCombo" Grid.Row="1" SelectionChanged="GameTypeCombo_SelectionChanged" Background="#e0e3ff" 
+                  HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
+                  FontSize="24" FontWeight="Bold" >
+            <TextBlock x:Uid="LiveTypeCombo" />
+            <TextBlock x:Uid="TimeTypeCombo" />
+            </ComboBox>
+        
+        
+        <ListView Name="ScoresList" Grid.Row="2" Background="#e0e3ea" HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                  ItemsSource="{x:Bind Scores}" ItemTemplate="{StaticResource  ScoreDataTemplate}" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <ListView.Header>
+                <StackPanel Orientation="Horizontal" Margin="15,5">
+                    <TextBlock x:Uid="ScoreHeader" Width="70"/>
+                    <TextBlock x:Uid="DateHeader"/>
+                </StackPanel>
+            </ListView.Header>
+        </ListView>
+
+        <CommandBar Grid.Row="3" Background="#7F000000" Foreground="Snow">
+            <AppBarButton Name="DeleteBtn" Foreground="Snow" x:Uid="ResultDelBtn" Icon="Delete" Click="DeleteBtn_Click" />
+        </CommandBar>
+
+    </Grid>
+</Page>
