@@ -10,59 +10,37 @@ namespace ParserKinopoisk
 {
     class Program
     {
-       // static BlockingCollection<FilmData> filmdata;
-        static BlockingCollection<FilmShot> imagedata;
-
         const int start_year = 2018;
+        const int page_count = 2;
 
-        static void LoadImageData(FilmData film)
+        static async Task DownloadDataToDb()
         {
-            WebConnect connect = new WebConnect("https://www.kinopoisk.ru/film/");
-            Console.WriteLine($"Getting images of film={film.filmID}...");
-            var film_imgs = connect.GetImageList(film.filmID).Result;
-            if (film_imgs != null)
-                foreach (var item in film_imgs)
-                    imagedata.Add(item);
-        }
+            //load data
+            Console.WriteLine("Parsing kinopoisk...");
+            List<FilmData> films = await FilmsLoader.GetFilms(start_year, page_count);
+            Console.WriteLine($"{films.Count} films has been parsed");
+            List<FilmShot> images = await ImagesLoader.GetImages(films);
+            Console.WriteLine($"{images.Count} images has been parsed");
 
-        static void Main(string[] args)
-        {
-            imagedata = new BlockingCollection<FilmShot>();
+            //delete films without images
+            films = (from f in films
+                     where images.Any(img => img.filmid == f.filmID)
+                     select f).ToList();
 
-            WebConnect connect = new WebConnect("https://www.kinopoisk.ru/lists/ord/rating_kp/");
-            var films = new List<FilmData>();
-            int year = DateTime.Now.Year;
-            for (int y = start_year; y <= year; y++)
-            {
-                for (int num = 1; num < 2; num++)
-                {
-                    Console.WriteLine($"Parsing page {num} of kinopoisk...");
-                    films.AddRange(connect.GetFilmsList(y, num).Result);
-                    Thread.Sleep(10 * 1000);
-                }
-            }
+            Console.WriteLine("Write to db");
+            //write to db
 
-            Console.WriteLine("---------------------------------------------------");
-
-            connect = new WebConnect("https://www.kinopoisk.ru/film/");
-            var images = new List<FilmShot>();
-
-            //Parallel.ForEach(films, LoadImageData);
-            foreach (var film in films)
-            {
-                LoadImageData(film);
-                Thread.Sleep(10 * 1000);
-            }
-
-            images = imagedata.ToList();
-
-            Console.WriteLine("Writing database...");
-
-            DbManager db = new DbManager("data1.db");
-            foreach (var film in films)
-                db.Insert(film);
+            DbManager db = new DbManager("data.db");
+            db.Insert(films);
             db.Insert(images);
             db.Close();
+        }
+        
+        static void Main(string[] args)
+        {
+            Task t = new Task(async() => await DownloadDataToDb());
+            t.Start();
+            Task.WaitAll(t);
 
             Console.WriteLine("FINISHED!!!!");
             Console.ReadKey();

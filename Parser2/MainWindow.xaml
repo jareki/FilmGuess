@@ -12,7 +12,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="25" />
         </Grid.RowDefinitions>
-        <WebBrowser Name="web" />
+        <WebBrowser Name="web" Navigated="web_Navigated" />
         <TextBox Grid.Row="1" Name="Txt" TextWrapping="Wrap" IsReadOnly="True" VerticalScrollBarVisibility="Visible" />
         <Button Grid.Row="2" Content="START" Click="Button_Click" />
     </Grid>

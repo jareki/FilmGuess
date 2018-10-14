@@ -45,6 +45,8 @@ namespace ParserKinopoisk
 
         public void Insert(FilmData ob) => connection.Insert(ob);
 
+        public void Insert(List<FilmData> objs) => connection.Insert(objs);
+
         public void Insert(List<FilmShot> obs) => connection.InsertAll(obs);
 
         public void DeleteFim(int id) => connection.Delete<FilmData>(id);

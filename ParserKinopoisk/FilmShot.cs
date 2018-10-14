@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ParserKinopoisk
 {
     [Table("FilmShot")]
-    class FilmShot
+    public class FilmShot
     {
         [PrimaryKey, AutoIncrement]
         public int id { get; set; }
